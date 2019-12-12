@@ -1,0 +1,15 @@
+<aura:component controller="getAllAccounts" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:registerEvent name="appEvent" type="c:comp1event"/>
+    <aura:attribute name="accounts"  type="object" />
+    <lightning:card>
+        <lightning:button label="click this" variant="brand" onclick="{!c.myAction}" />
+        <table>
+            <h1 class="slds-text-heading--label">Account Names</h1>
+            <aura:iteration items="{!v.accounts}" var="accs1" >
+                <tr>   
+                    <td><lightning:button variant="base" value="{!accs1.Id}" onclick="{!c.getdetailsofAcc}" label="{!accs1.Name}"/></td>
+                </tr>     
+            </aura:iteration>                                            
+        </table>
+    </lightning:card>
+</aura:component>
