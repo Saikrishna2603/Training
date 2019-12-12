@@ -1,0 +1,30 @@
+<aura:component controller="getAllAccounts" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="getRecordDetails" type="List"/>
+    <aura:attribute name="getRecordContacts" type="List"/>
+    <aura:handler  event="c:comp1event" action="{!c.getdetailsofAcc}"/>
+    <aura:attribute name="EvntValueforContact" type="String"/>
+    <lightning:card>
+        <aura:iteration items="{!v.getRecordDetails}" var="accrec">
+            <p><h1 class="slds-text-heading--label">Account name:</h1><lightning:formattedtext label="Name" type="text" value="{!accrec.Name}"/></p>
+            <br/> <p><h1 class="slds-text-heading--label">Phone:</h1>  <lightning:formattedPhone label="Phone" type="Phone" value="{!accrec.Phone}"/></p>
+            <br/> <p><h1 class="slds-text-heading--label">Description:</h1><lightning:formattedtext label="Description" type="text" value="{!accrec.Description}"/></p>
+            <br/> <p><h1 class="slds-text-heading--label">Industry:</h1><lightning:formattedtext label="Description" type="text" value="{!accrec.Industry}"/></p>
+            <br/> <p><h1 class="slds-text-heading--label">Type:</h1><lightning:formattedtext label="Description" type="text" value="{!accrec.Type}"/></p>
+        </aura:iteration>
+        <br/> <lightning:button label="get contacts" variant="brand" onclick="{!c.getContacts}" />
+        <table>
+            <br/>
+            <tr> <h1 class="slds-text-heading--label">Contact Names</h1>
+                <td><h1 class="slds-text-heading--label">Phone</h1></td>
+                <td><h1 class="slds-text-heading--label">Email</h1></td>
+            </tr>
+            <aura:iteration items="{!v.getRecordContacts}" var="accCon">  
+                <td></td>
+                <tr><td><lightning:formattedtext label="Name" type="text" value="{!accCon.Name}"/></td>
+                    <td><lightning:formattedtext label="Phone" type="Phone" value="{!accCon.Phone}"/> <br/></td>
+                    <td><lightning:formattedtext label="Email" type="Email" value="{!accCon.Email}"/> <br/></td>
+                </tr>
+            </aura:iteration>
+        </table>
+    </lightning:card>
+</aura:component>
