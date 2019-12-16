@@ -1,5 +1,5 @@
 <aura:component controller="getAllAccounts" implements="flexipage:availableForAllPageTypes" access="global">
-    <aura:registerEvent name="appEvent" type="c:comp1event"/>
+    <aura:registerEvent name="appEvent" type="c:cmpevent"/>
     <aura:attribute name="accounts"  type="object" />
     <lightning:card>
         <lightning:button label="click this" variant="brand" onclick="{!c.myAction}" />
