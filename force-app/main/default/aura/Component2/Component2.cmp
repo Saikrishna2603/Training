@@ -1,7 +1,7 @@
 <aura:component controller="getAllAccounts" implements="flexipage:availableForAllPageTypes" access="global">
     <aura:attribute name="getRecordDetails" type="List"/>
     <aura:attribute name="getRecordContacts" type="List"/>
-    <aura:handler  event="c:comp1event" action="{!c.getdetailsofAcc}"/>
+    
     <aura:attribute name="EvntValueforContact" type="String"/>
     <lightning:card>
         <aura:iteration items="{!v.getRecordDetails}" var="accrec">
